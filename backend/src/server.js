@@ -16,8 +16,12 @@ app.use(helmet());
 
 app.use(cors({
   origin: function(origin, callback) {
-    // Permite qualquer origem em desenvolvimento
-    if (!origin || origin.startsWith('http://127.0.0.1') || origin.startsWith('http://localhost')) {
+    const allowed = [
+      'http://127.0.0.1',
+      'http://localhost',
+      'https://financialcontroldashboard.netlify.app',
+    ];
+    if (!origin || allowed.some(o => origin.startsWith(o))) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
