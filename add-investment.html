@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novo Investimento — Controle FInanceiro</title>
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/add-investment.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Navegação principal">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
+          </svg>
+        </div>
+        <span class="sidebar-logo__name">Controle FInanceiro</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav__label">Principal</div>
+
+        <a href="dashboard.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Visão Geral
+        </a>
+
+        <a href="add-investment.html" class="nav-item active" aria-current="page">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Novo Investimento
+        </a>
+
+        <div class="sidebar-nav__label" style="margin-top: 12px;">Análise</div>
+
+        <a href="indices.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6"  y1="20" x2="6"  y2="14"></line>
+          </svg>
+          Índices
+        </a>
+
+        <a href="distribuicao.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+          </svg>
+          Distribuição
+        </a>
+      </nav>
+
+      <<div class="sidebar-user">
+        <a href="configuracoes.html" class="sidebar-user__profile" title="Configurações">
+          <div class="sidebar-user__avatar" id="user-avatar">JS</div>
+          <div class="sidebar-user__info">
+            <div class="sidebar-user__name" id="user-name">João Silva</div>
+            <div class="sidebar-user__email" id="user-email">joao@email.com</div>
+          </div>
+        </a>
+        <button class="sidebar-logout" title="Sair" id="logout-btn" aria-label="Sair da conta">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- TOPBAR -->
+    <header class="topbar" role="banner">
+      <button class="topbar__menu-btn" id="menu-toggle" aria-label="Abrir menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div class="topbar__title">
+        <h2>Novo Investimento</h2>
+        <p id="current-date"></p>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main class="main-content" id="main-content">
+
+      <div class="form-container">
+
+        <!-- Cabeçalho -->
+        <div class="form-page-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="dashboard.html">Dashboard</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <span class="breadcrumb__current">Novo Investimento</span>
+          </nav>
+          <h1>Registrar investimento</h1>
+          <p>Preencha os dados do seu investimento abaixo.</p>
+        </div>
+
+        <!-- Card do formulário -->
+        <div class="card investment-form-card">
+          <form id="investment-form" novalidate>
+
+            <!-- Seção 1: Identificação -->
+            <div class="form-section">
+              <div class="form-section-title">Identificação</div>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="investment-type">Tipo de investimento</label>
+                  <select class="form-select" id="investment-type" name="type" required>
+                    <option value="" disabled selected>Selecione o tipo</option>
+                    <optgroup label="Renda Fixa">
+                      <option value="cdb">CDB</option>
+                      <option value="lca">LCA</option>
+                      <option value="lci">LCI</option>
+                      <option value="tesouro">Tesouro Direto</option>
+                      <option value="debenture">Debênture</option>
+                      <option value="cri_cra">CRI / CRA</option>
+                    </optgroup>
+                    <optgroup label="Renda Variável">
+                      <option value="acoes">Ações</option>
+                      <option value="bdr">BDR</option>
+                      <option value="etf">ETF</option>
+                    </optgroup>
+                    <optgroup label="Fundos">
+                      <option value="fii">FII</option>
+                      <option value="fundo_rf">Fundo de Renda Fixa</option>
+                      <option value="fundo_rv">Fundo de Renda Variável</option>
+                    </optgroup>
+                    <optgroup label="Outros">
+                      <option value="cripto">Criptomoeda</option>
+                      <option value="poupanca">Poupança</option>
+                      <option value="outro">Outro</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="investment-name">Nome / Identificação</label>
+                  <input class="form-input" type="text" id="investment-name" name="name"
+                    placeholder="Ex: LCA BV Liquidez" />
+                  <span class="form-help">Opcional. Use para identificar facilmente.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Seção 2: Valores -->
+            <div class="form-section">
+              <div class="form-section-title">Valores</div>
+              <div class="form-grid-2">
+
+                <div class="form-group">
+                  <label class="form-label" for="amount">Valor investido</label>
+                  <div class="input-with-prefix">
+                    <span class="input-prefix">R$</span>
+                    <input class="form-input" type="number" id="amount" name="amount"
+                      placeholder="0,00" min="0" step="0.01" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="yield-type">Indexador</label>
+                  <select class="form-select" id="yield-type" name="yield_type">
+                    <option value="aa">% ao ano (direto)</option>
+                    <option value="cdi">% do CDI</option>
+                    <option value="ipca">IPCA +</option>
+                    <option value="selic">% da Selic</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="yield-rate">Taxa de rendimento</label>
+                  <div class="input-with-suffix">
+                    <input class="form-input" type="number" id="yield-rate" name="yield_rate"
+                      placeholder="0,00" min="0" step="0.01" required />
+                    <span class="input-suffix" id="yield-suffix">% a.a.</span>
+                  </div>
+                  <span class="form-help" id="yield-help">Taxa anual esperada de rendimento.</span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Seção 3: Datas -->
+            <div class="form-section">
+              <div class="form-section-title">Datas</div>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="investment-date">Data do aporte</label>
+                  <input class="form-input" type="date" id="investment-date" name="date" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="maturity-date">Data de vencimento</label>
+                  <input class="form-input" type="date" id="maturity-date" name="maturity_date" />
+                  <span class="form-help">Opcional.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Seção 4: Observações -->
+            <div class="form-section">
+              <div class="form-section-title">Observações</div>
+              <div class="form-group">
+                <label class="form-label" for="notes">Anotações</label>
+                <textarea class="form-textarea" id="notes" name="notes"
+                  placeholder="Informações adicionais sobre este investimento..." rows="3"></textarea>
+              </div>
+            </div>
+
+            <!-- Ações -->
+            <div class="form-actions">
+              <a href="dashboard.html" class="btn btn-ghost">Cancelar</a>
+              <button type="submit" class="btn btn-primary">Salvar investimento</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script>const API_URL = 'http://127.0.0.1:3001/api';</script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/investment.js"></script>
+</body>
+</html>

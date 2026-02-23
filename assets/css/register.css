@@ -1,0 +1,18 @@
+/* ============================================================
+   INVEST DASHBOARD — Register Styles
+   Complementa o login.css
+   ============================================================ */
+
+/* ── Linha dupla para senha e confirmação ─────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── Responsivo ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,163 @@
+/* ============================================================
+   INVEST DASHBOARD — Auth Styles (login + register)
+   ============================================================ */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7F8FA;
+  padding: 24px;
+}
+
+.auth-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.auth-logo__icon {
+  width: 36px;
+  height: 36px;
+  background: #3B6FF0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-logo__icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+}
+
+.auth-logo__name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ── Cabeçalho ────────────────────────────────────────────── */
+.auth-heading {
+  margin-bottom: 28px;
+}
+
+.auth-heading h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.auth-heading p {
+  font-size: 0.9rem;
+  color: #6B7280;
+}
+
+/* ── Campos ───────────────────────────────────────────────── */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  color: #111;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #3B6FF0;
+  box-shadow: 0 0 0 3px rgba(59,111,240,0.1);
+}
+
+.input-error {
+  border-color: #EF4444 !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.1) !important;
+}
+
+/* ── Esqueci a senha ──────────────────────────────────────── */
+.forgot-link {
+  text-align: right;
+  margin-top: 6px;
+}
+
+.forgot-link a {
+  font-size: 0.8125rem;
+  color: #3B6FF0;
+  text-decoration: none;
+}
+
+.forgot-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Botão ────────────────────────────────────────────────── */
+.btn-auth {
+  width: 100%;
+  padding: 12px;
+  background: #3B6FF0;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  margin-top: 4px;
+}
+
+.btn-auth:hover   { background: #2d5ed4; }
+.btn-auth:active  { transform: scale(0.98); }
+.btn-auth:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* ── Rodapé ───────────────────────────────────────────────── */
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.auth-switch a {
+  color: #3B6FF0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-switch a:hover { text-decoration: underline; }
+
+/* ── Responsivo ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 36px 24px;
+  }
+}
