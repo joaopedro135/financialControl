@@ -36,6 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.options('*', cors());
 app.use('/api/auth',        authRoutes);
 app.use('/api/investments', investmentRoutes);
 app.use('/api/indices',     indicesRoutes);

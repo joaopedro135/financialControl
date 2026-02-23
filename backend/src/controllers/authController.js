@@ -17,8 +17,8 @@ function sendTokenResponse(res, statusCode, user, token) {
     .status(statusCode)
     .cookie('invest_token', token, {
       httpOnly: true,
-      secure: isProduction,
-      sameSite: 'lax',
+      secure: true,
+      sameSite: 'none',
       maxAge: 7 * 24 * 60 * 60 * 1000,
     })
     .json({
@@ -157,7 +157,7 @@ async function login(req, res) {
 
 function logout(req, res) {
   res
-    .clearCookie('invest_token', { httpOnly: true, sameSite: 'lax' })
+    .clearCookie('invest_token', { httpOnly: true, secure: true, sameSite: 'none' })
     .json({ success: true, message: 'Logout realizado com sucesso.' });
 }
 

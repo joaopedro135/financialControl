@@ -28,7 +28,7 @@ function protect(req, res, next) {
         ? 'Sessão expirada. Faça login novamente.'
         : 'Token inválido. Faça login novamente.';
 
-    res.clearCookie('invest_token');
+    res.clearCookie('invest_token', { httpOnly: true, secure: true, sameSite: 'none' });
     return res.status(401).json({ success: false, message });
   }
 }
